@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1031281020683-8r4189p224k1m61va3j1rlrhlqidj0te.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1031281020683-8r4189p224k1m61va3j1rlrhlqidj0te</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCpvBI4qvtvOnm89EC4AWqwiGKmgyy55JQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1031281020683</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.syanik.PropertyAnalytics</string>
+	<key>PROJECT_ID</key>
+	<string>propertyanalytics-a9db8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>propertyanalytics-a9db8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1031281020683:ios:4856f3ad161d9a57a79c0e</string>
+	<key>DATABASE_URL</key>
+	<string>https://propertyanalytics-a9db8.firebaseio.com</string>
+</dict>
+</plist>
