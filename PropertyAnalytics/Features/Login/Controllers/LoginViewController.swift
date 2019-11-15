@@ -13,7 +13,10 @@ class LoginViewController: UIViewController {
     // MARK: - Dependencies
     
     let viewModel: LoginViewModel = LoginViewModel()
-    let presenter: PresenterProtocol = AppPresenter()
+    lazy var presenter: PresenterProtocol? = {
+        let presenter = AppPresenter()
+        return presenter
+    }()
  
     // MARK: - Views
     
@@ -88,7 +91,7 @@ class LoginViewController: UIViewController {
     }
     
     fileprivate func handleSuccess(_ user: User) {
-        self.presenter.present(in: self)
+        self.presenter?.present(in: self)
     }
     
     // MARK: - View Setup

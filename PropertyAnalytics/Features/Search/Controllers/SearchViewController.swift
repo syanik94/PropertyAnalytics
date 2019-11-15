@@ -232,7 +232,7 @@ extension SearchViewController: MKMapViewDelegate {
         let key = (view.annotation?.title) ?? ""
         if let dictKey = key {
             let cityData = viewModel.cityDictionary[dictKey]
-            print(cityData)
+            
             cityDetailViewPresenter.present(in: self, with: cityData!)
             // TODO - Pass this to details VC
         }

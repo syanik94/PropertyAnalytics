@@ -14,22 +14,24 @@ class FirestoreService {
 
     enum Collection: String {
         case city
+        case trends
         case users
     }
     
+    let db = Firestore.firestore()
+
     func fetch(from collection: Collection, completion: @escaping FirestoreFetchCompletion<Any>) {
-            let db = Firestore.firestore()
-            let collectionPath = collection.rawValue
-            db.collection(collectionPath).getDocuments { (snapshot, err) in
-                if let error = err {
-                    completion(.failure(error))
-                } else {
-                    var fetchedData = [Any]()
-                    for document in snapshot!.documents {
-                        fetchedData.append(document.data())
-                    }
-                    completion(.success(fetchedData))
+        let collectionPath = collection.rawValue
+        db.collection(collectionPath).getDocuments { (snapshot, err) in
+            if let error = err {
+                completion(.failure(error))
+            } else {
+                var fetchedData = [Any]()
+                for document in snapshot!.documents {
+                    fetchedData.append(document.data())
                 }
+                completion(.success(fetchedData))
             }
         }
+    }
 }

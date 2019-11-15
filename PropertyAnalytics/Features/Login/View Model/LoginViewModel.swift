@@ -12,7 +12,7 @@ class LoginViewModel {
     
     // MARK: - Dependencies
     
-    private var loginService: LoginProtocol
+    weak var loginService: LoginProtocol?
 
     // MARK: - State
     
@@ -37,7 +37,7 @@ class LoginViewModel {
     init(loginService: LoginProtocol = LoginService() ) {
         self.loginService = loginService
         
-        self.loginService.loginHandler = { [weak self] (user, error) in
+        self.loginService?.loginHandler = { [weak self] (user, error) in
             if let error = error { self?.state = .failed(error: error.localizedDescription) }
             if let user = user { self?.state = .loggedIn(user: user) }
         }
@@ -46,7 +46,7 @@ class LoginViewModel {
     // MARK: - API
     
     func handleLogin() {
-        loginService.login(email: email ?? "", password: password ?? "")
+        loginService?.login(email: email ?? "", password: password ?? "")
     }
     
 

@@ -8,12 +8,12 @@
 
 import UIKit
 
-struct AppPresenter: PresenterProtocol {
+class AppPresenter: PresenterProtocol {
     
     func present(in vc: UIViewController) {
-        let trendsVC = UIViewController()
-        let favVC = UIViewController()
+        let trendsVC = TrendsViewController()
         let searchVC = SearchViewController()
+        let favVC = FavoritesViewController()
         
         searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         favVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
@@ -29,6 +29,10 @@ struct AppPresenter: PresenterProtocol {
         ]
         tabBarVC.modalPresentationStyle = .fullScreen
         vc.present(tabBarVC, animated: true, completion: nil)
+    }
+    
+    deinit {
+        print("Deallocationg", self)
     }
     
 }

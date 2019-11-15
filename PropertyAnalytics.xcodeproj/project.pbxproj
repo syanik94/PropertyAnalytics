@@ -39,6 +39,17 @@
 		3D168AAE237CF83000DB4652 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AAD237CF83000DB4652 /* FirestoreService.swift */; };
 		3D168AB1237CF84700DB4652 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AB0237CF84700DB4652 /* DataLoader.swift */; };
 		3D168AB3237CF85D00DB4652 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AB2237CF85D00DB4652 /* Presenter.swift */; };
+		3D168AB7237D859100DB4652 /* TrendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AB6237D859100DB4652 /* TrendsViewController.swift */; };
+		3D168ABA237D85FA00DB4652 /* TrendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AB9237D85FA00DB4652 /* TrendsViewModel.swift */; };
+		3D168ABE237D874000DB4652 /* TrendDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168ABD237D874000DB4652 /* TrendDataPoint.swift */; };
+		3D168AC1237D8D6300DB4652 /* TrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AC0237D8D6300DB4652 /* TrendView.swift */; };
+		3D168AC3237D900800DB4652 /* TrendDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AC2237D900800DB4652 /* TrendDataLoader.swift */; };
+		3D168AC6237E05F300DB4652 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AC5237E05F300DB4652 /* String+Extensions.swift */; };
+		3D168AC8237E09BA00DB4652 /* StateTrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AC7237E09BA00DB4652 /* StateTrendTableViewCell.swift */; };
+		3D168ACC237EFE1000DB4652 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168ACB237EFE1000DB4652 /* FavoritesViewController.swift */; };
+		3D168ACF237F00B200DB4652 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168ACE237F00B200DB4652 /* FavoriteTableViewCell.swift */; };
+		3D168AD2237F018200DB4652 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AD1237F018200DB4652 /* FavoriteViewModel.swift */; };
+		3D168AD5237F06D300DB4652 /* SavedCityDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AD4237F06D300DB4652 /* SavedCityDataLoader.swift */; };
 		C08AB50DBFC4A3F574D29FAE /* Pods_PropertyAnalyticsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC4B27541EC37DCD7359B2A /* Pods_PropertyAnalyticsTests.framework */; };
 		DC5FC62D17EA85B068225B11 /* Pods_PropertyAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57541343A8CCDF1973192515 /* Pods_PropertyAnalytics.framework */; };
 /* End PBXBuildFile section */
@@ -95,6 +106,17 @@
 		3D168AAD237CF83000DB4652 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		3D168AB0237CF84700DB4652 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		3D168AB2237CF85D00DB4652 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		3D168AB6237D859100DB4652 /* TrendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewController.swift; sourceTree = "<group>"; };
+		3D168AB9237D85FA00DB4652 /* TrendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsViewModel.swift; sourceTree = "<group>"; };
+		3D168ABD237D874000DB4652 /* TrendDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendDataPoint.swift; sourceTree = "<group>"; };
+		3D168AC0237D8D6300DB4652 /* TrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendView.swift; sourceTree = "<group>"; };
+		3D168AC2237D900800DB4652 /* TrendDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendDataLoader.swift; sourceTree = "<group>"; };
+		3D168AC5237E05F300DB4652 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		3D168AC7237E09BA00DB4652 /* StateTrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTrendTableViewCell.swift; sourceTree = "<group>"; };
+		3D168ACB237EFE1000DB4652 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		3D168ACE237F00B200DB4652 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		3D168AD1237F018200DB4652 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		3D168AD4237F06D300DB4652 /* SavedCityDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCityDataLoader.swift; sourceTree = "<group>"; };
 		57541343A8CCDF1973192515 /* Pods_PropertyAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PropertyAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -187,6 +209,7 @@
 			children = (
 				3D168A70237A781000DB4652 /* UIView+Extensions.swift */,
 				3D168A72237A785C00DB4652 /* UIViewController+Extensions.swift */,
+				3D168AC5237E05F300DB4652 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,8 +217,10 @@
 		3D168A74237A786A00DB4652 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				3D168AC9237EFD6500DB4652 /* Favorites */,
 				3D168A76237A78FB00DB4652 /* Login */,
 				3D168A87237A936400DB4652 /* Search */,
+				3D168AB4237D852700DB4652 /* Trends */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -357,6 +382,102 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		3D168AB4237D852700DB4652 /* Trends */ = {
+			isa = PBXGroup;
+			children = (
+				3D168ABF237D876700DB4652 /* Views */,
+				3D168ABB237D871100DB4652 /* Models */,
+				3D168AB8237D85F000DB4652 /* View Models */,
+				3D168AB5237D855200DB4652 /* Controllers */,
+			);
+			path = Trends;
+			sourceTree = "<group>";
+		};
+		3D168AB5237D855200DB4652 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D168AB6237D859100DB4652 /* TrendsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3D168AB8237D85F000DB4652 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D168AB9237D85FA00DB4652 /* TrendsViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		3D168ABB237D871100DB4652 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D168ABC237D872F00DB4652 /* Data */,
+				3D168AC2237D900800DB4652 /* TrendDataLoader.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3D168ABC237D872F00DB4652 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3D168ABD237D874000DB4652 /* TrendDataPoint.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3D168ABF237D876700DB4652 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D168AC0237D8D6300DB4652 /* TrendView.swift */,
+				3D168AC7237E09BA00DB4652 /* StateTrendTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3D168AC9237EFD6500DB4652 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				3D168AD3237F021600DB4652 /* Models */,
+				3D168ACD237F00A400DB4652 /* Views */,
+				3D168ACA237EFE0500DB4652 /* Controllers */,
+				3D168AD0237F017800DB4652 /* VIew Model */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		3D168ACA237EFE0500DB4652 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D168ACB237EFE1000DB4652 /* FavoritesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3D168ACD237F00A400DB4652 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D168ACE237F00B200DB4652 /* FavoriteTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3D168AD0237F017800DB4652 /* VIew Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D168AD1237F018200DB4652 /* FavoriteViewModel.swift */,
+			);
+			path = "VIew Model";
+			sourceTree = "<group>";
+		};
+		3D168AD3237F021600DB4652 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D168AD4237F06D300DB4652 /* SavedCityDataLoader.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		418070E4DB24870841F78FBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +505,8 @@
 			dependencies = (
 			);
 			name = PropertyAnalytics;
+			packageProductDependencies = (
+			);
 			productName = PropertyAnalytics;
 			productReference = 3D168A4A237A765900DB4652 /* PropertyAnalytics.app */;
 			productType = "com.apple.product-type.application";
@@ -435,6 +558,8 @@
 				Base,
 			);
 			mainGroup = 3D168A41237A765900DB4652;
+			packageReferences = (
+			);
 			productRefGroup = 3D168A4B237A765900DB4652 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -536,6 +661,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D168AA7237CCF2A00DB4652 /* CityDetailView.swift in Sources */,
+				3D168AC8237E09BA00DB4652 /* StateTrendTableViewCell.swift in Sources */,
+				3D168AC6237E05F300DB4652 /* String+Extensions.swift in Sources */,
 				3D168AAE237CF83000DB4652 /* FirestoreService.swift in Sources */,
 				3D168A7E237A808200DB4652 /* LoginView.swift in Sources */,
 				3D168A9B237B8A6C00DB4652 /* LoadingTableViewCell.swift in Sources */,
@@ -543,16 +670,24 @@
 				3D168A8C237B370900DB4652 /* SearchPresenter.swift in Sources */,
 				3D168AA3237CA51E00DB4652 /* CityDetailViewController.swift in Sources */,
 				3D168A4E237A765900DB4652 /* AppDelegate.swift in Sources */,
+				3D168AB7237D859100DB4652 /* TrendsViewController.swift in Sources */,
 				3D168A50237A765900DB4652 /* SceneDelegate.swift in Sources */,
+				3D168ABA237D85FA00DB4652 /* TrendsViewModel.swift in Sources */,
+				3D168AD5237F06D300DB4652 /* SavedCityDataLoader.swift in Sources */,
+				3D168ACF237F00B200DB4652 /* FavoriteTableViewCell.swift in Sources */,
 				3D168AB3237CF85D00DB4652 /* Presenter.swift in Sources */,
 				3D168A96237B536300DB4652 /* MappingDataLoader.swift in Sources */,
 				3D168AA5237CB0E100DB4652 /* CancelButton.swift in Sources */,
 				3D168A90237B4A2700DB4652 /* SearchViewModel.swift in Sources */,
+				3D168AC1237D8D6300DB4652 /* TrendView.swift in Sources */,
 				3D168AA9237CD44E00DB4652 /* SaveButton.swift in Sources */,
 				3D168AAB237CF7DB00DB4652 /* MapPin.swift in Sources */,
 				3D168A9E237B8E7300DB4652 /* CustomTextfield.swift in Sources */,
+				3D168AD2237F018200DB4652 /* FavoriteViewModel.swift in Sources */,
 				3D168AA0237BA57700DB4652 /* DetailAnnotationView.swift in Sources */,
 				3D168A73237A785C00DB4652 /* UIViewController+Extensions.swift in Sources */,
+				3D168ACC237EFE1000DB4652 /* FavoritesViewController.swift in Sources */,
+				3D168ABE237D874000DB4652 /* TrendDataPoint.swift in Sources */,
 				3D168A84237A825F00DB4652 /* LoginService.swift in Sources */,
 				3D168A82237A821500DB4652 /* LoginViewModel.swift in Sources */,
 				3D168A71237A781000DB4652 /* UIView+Extensions.swift in Sources */,
@@ -561,6 +696,7 @@
 				3D168AB1237CF84700DB4652 /* DataLoader.swift in Sources */,
 				3D168A52237A765900DB4652 /* LoginViewController.swift in Sources */,
 				3D168A80237A80AE00DB4652 /* User.swift in Sources */,
+				3D168AC3237D900800DB4652 /* TrendDataLoader.swift in Sources */,
 				3D168A86237A871800DB4652 /* SignUpButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

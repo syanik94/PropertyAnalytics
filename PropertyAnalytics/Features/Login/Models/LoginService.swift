@@ -10,9 +10,16 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-protocol LoginProtocol {
+protocol LoginProtocol: class {
     var loginHandler: (((User?), Error?) -> Void)? { get set }
     func login(email: String, password: String)
+}
+
+class UserService {
+    static let shared = UserService()
+    private init() {}
+    
+    var user: User? 
 }
 
 class LoginService: LoginProtocol {
@@ -26,8 +33,12 @@ class LoginService: LoginProtocol {
             }
             if let authResult = authResult {
                 let signedinUser = User(uuid: authResult.user.uid, email: authResult.user.email ?? "")
+                UserService.shared.user = signedinUser
                 strongSelf.loginHandler?(signedinUser, nil)
             }
         }
+    }
+    deinit {
+        print("Deinit", self)
     }
 }
