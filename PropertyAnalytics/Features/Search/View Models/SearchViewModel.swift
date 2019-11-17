@@ -37,13 +37,7 @@ class SearchViewModel {
     
     var selectedCity: CityData?
     private var savedCities: [CityData] = []
-    private(set) var cityDataViewModel: [CityDataViewModel] = [] {
-        didSet {
-            cityDataViewModel.forEach { (vm) in
-                print(vm)
-            }
-        }
-    }
+    private(set) var cityDataViewModel: [CityDataViewModel] = []
     
     
     // MARK: - Initializer Methods
@@ -104,8 +98,6 @@ class SearchViewModel {
     }
     
     fileprivate func configureCityViewModel() {
-        print("Configured VM", #function)
-
         if savedCities.isEmpty {
             cityDataViewModel = cityData.map({ CityDataViewModel(cityData: $0, isSaved: false) })
         }
