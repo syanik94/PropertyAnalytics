@@ -24,8 +24,7 @@ class SavedCityDataLoader: DataLoader {
             if let document = snapshot {
                 let savedCityMap = document.data() as? [String: [String]]
                 let savedCities = savedCityMap?.values.flatMap({ $0 })
-                if savedCities!.isEmpty { self?.savedCityDataCompletion?([], nil) }
-                else { self?.getCityData(for: savedCities ?? []) }
+                self?.getCityData(for: savedCities ?? [])
             }
         }
     }
@@ -35,6 +34,7 @@ class SavedCityDataLoader: DataLoader {
     
     private func getCityData(for cities: [String]) {
         var cityData = [CityData]()
+        if cities.isEmpty { savedCityDataCompletion?([],nil) }
         
         cities.forEach { (city) in
             let cityDocRef = firestore.db
