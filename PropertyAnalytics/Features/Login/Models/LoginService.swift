@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-protocol LoginProtocol: class {
+protocol LoginProtocol {
     var loginHandler: (((User?), Error?) -> Void)? { get set }
     func login(email: String, password: String)
 }

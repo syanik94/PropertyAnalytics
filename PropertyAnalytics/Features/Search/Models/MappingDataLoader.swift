@@ -9,6 +9,23 @@
 import Foundation
 import Firebase
 
+struct DataPersistenceService {
+    let fb = FirestoreService()
+    
+    func save(collection: FirestoreService.Collection, doc: String, data: Any) {
+        let docRef = fb.db
+            .collection(collection.rawValue)
+            .document(doc)
+        
+        docRef.updateData(["savedCity": data]) { err in
+            if let err = err {
+                print("Error updating document: \(err.localizedDescription)")
+            }
+        }
+    }
+}
+
+
 class MappingDataLoader: DataLoader {
     var mappingDataCompletion: (([CityData]?, Error?) -> Void)?
 
@@ -18,12 +35,14 @@ class MappingDataLoader: DataLoader {
         firestoreService.fetch(from: .city) { (result) in
             switch result {
             case .success(let cityDictionaries):
-                let fetchedCities = cityDictionaries as? [[String: Any]]
+                let fetchedCities = cityDictionaries as? [QueryDocumentSnapshot]
                 var cities: [CityData] = []
-                
-                fetchedCities?.forEach({ (dictionary) in
-                    cities.append(CityData(dictionary: dictionary))
+
+                fetchedCities?.forEach({ (doc) in
+                    let docData = doc.data()
+                    cities.append(CityData(dictionary: docData, docID: doc.documentID))
                 })
+          
                 self.mappingDataCompletion?(cities, nil)
                 
             case .failure(let err):

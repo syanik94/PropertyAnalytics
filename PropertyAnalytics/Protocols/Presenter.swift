@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol PresenterProtocol: class {
+protocol PresenterProtocol {
     func present(in vc: UIViewController)
 }

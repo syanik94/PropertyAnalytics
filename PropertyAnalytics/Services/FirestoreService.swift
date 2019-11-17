@@ -28,7 +28,7 @@ class FirestoreService {
             } else {
                 var fetchedData = [Any]()
                 for document in snapshot!.documents {
-                    fetchedData.append(document.data())
+                    fetchedData.append(document)
                 }
                 completion(.success(fetchedData))
             }

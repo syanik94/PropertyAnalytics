@@ -20,7 +20,7 @@ class DetailAnnotationView: MKMarkerAnnotationView {
     let cityLabel: UILabel = {
         let l = UILabel()
         l.textAlignment = .right
-        l.text = "Insert City"
+        l.text = "No Data"
         return l
     }()
     

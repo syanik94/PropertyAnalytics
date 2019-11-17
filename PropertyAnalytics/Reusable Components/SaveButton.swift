@@ -9,6 +9,7 @@
 import UIKit
 
 class SaveButton: UIButton {
+    
     override var isHighlighted: Bool {
         didSet {
             UIView.animate(withDuration: 0.2) {
@@ -22,8 +23,8 @@ class SaveButton: UIButton {
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: 33).isActive = true
         widthAnchor.constraint(equalToConstant: 33).isActive = true
-        setImage(#imageLiteral(resourceName: "icons8-star-filled-20").withRenderingMode(.alwaysOriginal), for: .normal)
-        setImage(#imageLiteral(resourceName: "icons8-star-filled-20 (1)").withRenderingMode(.alwaysOriginal), for: .selected)
+        setBackgroundImage(#imageLiteral(resourceName: "icons8-star-filled-20").withRenderingMode(.alwaysOriginal), for: .normal)
+        setBackgroundImage(#imageLiteral(resourceName: "icons8-star-filled-20 (1)").withRenderingMode(.alwaysOriginal), for: .selected)
         setTitle("", for: .normal)
         backgroundColor = .clear
         tintColor = .clear

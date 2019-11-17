@@ -20,8 +20,9 @@ class CityData {
     let singleFamPredictedPricePerSqFt: Int
     let singleFamPricePerSqFt: Double
     let state: String
+    let docID: String
     
-    init(dictionary: [String: Any]) {
+    init(dictionary: [String: Any], docID: String) {
         coordinates = dictionary["coordinates"] as? GeoPoint ?? GeoPoint(latitude: 0, longitude: 0)
         county = dictionary["county"] as? String ?? ""
         description = dictionary["description"] as? String ?? ""
@@ -32,6 +33,22 @@ class CityData {
         singleFamPredictedPricePerSqFt = dictionary["singleFamPredictedPricePerSqFt"] as? Int ?? 0
         singleFamPricePerSqFt = dictionary["singleFamPricePerSqFt"] as? Double ?? 0
         state = dictionary["state"] as? String ?? ""
+        self.docID = docID
+    }
+}
+
+class CityDataViewModel: Equatable {
+    var isSaved: Bool
+    let cityData: CityData
+    
+    init(cityData: CityData, isSaved: Bool) {
+        self.cityData = cityData
+        self.isSaved = isSaved
+    }
+    
+    static func == (lhs: CityDataViewModel, rhs: CityDataViewModel) -> Bool {
+        if lhs.cityData.description == rhs.cityData.description { return true }
+        else { return false}
     }
 }
 

@@ -14,25 +14,25 @@ class TrendDataLoader {
 
     let firestoreService = FirestoreService()
     
-    func loadTrends() {
-        let rootDocRef = firestoreService.db.collection(FirestoreService.Collection.trends.rawValue)
-        rootDocRef.getDocuments { [weak self] (querySnapshot, err) in
+    func loadTrends(for state: String) {
+        let rootDocRef = firestoreService.db
+            .collection(FirestoreService.Collection.trends.rawValue)
+            .document(state)
+        
+        
+        rootDocRef.getDocument { [weak self] (querySnapshot, err) in
             if let err = err {
                 self?.trendsDataCompletion?(nil, err)
             }
-            
             if let snapshot = querySnapshot {
                 var trendsViewModels: [StateTrendViewModel] = []
-                
-                for document in snapshot.documents {
-                    let diction = document.data() as? [String: [String: Double]]
-                    
-                    if let diction = diction {
-                        trendsViewModels.append(StateTrendViewModel(state: document.documentID, dictionary: diction))
-                    }
+                let diction = snapshot.data() as? [String: [String: Double]]
+                if let diction = diction {
+                    trendsViewModels.append(StateTrendViewModel(state: snapshot.documentID, dictionary: diction))
+                    self?.trendsDataCompletion?(trendsViewModels, nil)
+                } else {
+                    self?.trendsDataCompletion?([], nil)
                 }
-                
-                self?.trendsDataCompletion?(trendsViewModels, nil)
             }
         }
     }

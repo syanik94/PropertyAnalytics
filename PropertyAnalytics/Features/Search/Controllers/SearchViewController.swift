@@ -20,7 +20,12 @@ class SearchViewController: UIViewController {
     // MARK: - Dependencies
     
     let viewModel = SearchViewModel()
-    let cityDetailViewPresenter = CityDetailViewPresenter()
+    
+    lazy var cityDetailViewPresenter: CityDetailViewPresenter = {
+        var p = CityDetailViewPresenter()
+        p.viewController = self
+        return p
+    }()
     
     // MARK: - Views
         
@@ -105,15 +110,19 @@ class SearchViewController: UIViewController {
     
     @objc fileprivate func handleLogoutTap() {
         self.dismiss(animated: true, completion: nil)
-        // TODO - HANDLE SIGN OUT
-        /*
-             let firebaseAuth = Auth.auth()
-         do {
-           try firebaseAuth.signOut()
-         } catch let signOutError as NSError {
-           print ("Error signing out: %@", signOutError)
-         }
-         */
+    }
+    
+    fileprivate var stateTrend: String?
+    
+    @objc func handleTrendsTap() {
+        guard let stateTrend = stateTrend else { return }
+        let trendsVC = UINavigationController(rootViewController: TrendsViewController(stateTrend: stateTrend))
+        present(trendsVC, animated: true, completion: nil)
+    }
+    
+    @objc func handleSave(sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        viewModel.save()
     }
     
 }
@@ -206,8 +215,8 @@ extension SearchViewController: MKMapViewDelegate {
     }
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let annotationCoordinate = view.annotation?.coordinate {
-            print("User tapped on annotation with title: \(annotationCoordinate)")
+        if let key = (view.annotation?.title) ?? "" {
+            viewModel.selectedCity = viewModel.cityDictionary[key]?.cityData
         }
     }
     
@@ -232,13 +241,10 @@ extension SearchViewController: MKMapViewDelegate {
         let key = (view.annotation?.title) ?? ""
         if let dictKey = key {
             let cityData = viewModel.cityDictionary[dictKey]
-            
-            cityDetailViewPresenter.present(in: self, with: cityData!)
-            // TODO - Pass this to details VC
+            stateTrend = cityData?.cityData.state
+            cityDetailViewPresenter.present(with: cityData!)
         }
-        
     }
-    
 }
 
 

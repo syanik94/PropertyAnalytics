@@ -28,11 +28,9 @@ class TrendsViewModel {
     
     init() {
         listenForTrendUpdates()
-        isLoading = true
-        trendDataLoader.loadTrends()
     }
     
-    func listenForTrendUpdates() {
+    fileprivate func listenForTrendUpdates() {
         trendDataLoader.trendsDataCompletion = { [weak self] (stateTrendVMs, error) in
             if let error = error {
                 print(error)
@@ -43,6 +41,10 @@ class TrendsViewModel {
         }
     }
     
+    func getTrends(for state: String) {
+        isLoading = true
+        trendDataLoader.loadTrends(for: state)
+    }
 }
 
 

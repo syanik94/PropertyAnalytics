@@ -23,10 +23,10 @@ class FavoritesViewController: UIViewController {
     
     lazy var tableView: UITableView = {
         let tv = UITableView(frame: .zero, style: .grouped)
+        tv.backgroundColor = .clear
         tv.register(FavoriteTableViewCell.self,
                     forCellReuseIdentifier: Constant.favoriteCell)
         tv.dataSource = self
-        tv.delegate = self
         return tv
     }()
     
@@ -34,21 +34,28 @@ class FavoritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getFavorites()
+        bindToViewModel()
         setupNavBar()
         setupTableView()
-        bindToViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getFavorites()
     }
     
     // MARK: - Binding
     
     fileprivate func bindToViewModel() {
-        
+        viewModel.handleUpdate = { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     // MARK: - Setup View
     
     fileprivate func setupTableView() {
+        view.backgroundColor = .white
         view.addSubview(tableView)
         tableView.fillSuperview()
     }
@@ -62,19 +69,15 @@ class FavoritesViewController: UIViewController {
 
 extension FavoritesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.savedCities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let favoriteCell = tableView.dequeueReusableCell(withIdentifier: Constant.favoriteCell, for: indexPath) as? FavoriteTableViewCell else { return UITableViewCell() }
-        
+        favoriteCell.savedCity = viewModel.savedCities[indexPath.item]
         return favoriteCell
     }
 }
 
-extension FavoritesViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height / 3
-    }
-}
+
 

@@ -48,7 +48,7 @@ class SavedCityDataLoader: DataLoader {
 
                 if let document = snapshot {
                     if let documentMap = document.data() {
-                        cityData.append(CityData(dictionary: documentMap))
+                        cityData.append(CityData(dictionary: documentMap, docID: document.documentID))
                         self?.savedCityDataCompletion?(cityData, nil)
                     }
                 }

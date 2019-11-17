@@ -103,6 +103,7 @@ class TrendView: LineChartView {
         dataSet.valueFont = NSUIFont.systemFont(ofSize: 10, weight: .light)
         dataSet.circleRadius = 0
         dataSet.circleHoleRadius = 0
+        dataSet.lineWidth = 2
         dataSet.drawValuesEnabled = false
         dataSet.drawVerticalHighlightIndicatorEnabled = false
         dataSet.drawHorizontalHighlightIndicatorEnabled = false

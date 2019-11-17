@@ -12,7 +12,7 @@ class LoginViewModel {
     
     // MARK: - Dependencies
     
-    weak var loginService: LoginProtocol?
+    var loginService: LoginProtocol?
 
     // MARK: - State
     
