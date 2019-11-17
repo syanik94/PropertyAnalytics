@@ -145,8 +145,10 @@ class LoginViewController: UIViewController {
     @objc fileprivate func handleQuickSignInTap() {
         viewModel.password = "Test123!"
         viewModel.email = "test@test.com"
+        
         loginView.usernameTextField.text = "test@test.com"
         loginView.passwordTextField.text = "Test123!"
+        
         viewModel.handleLogin()
     }
     

@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CityDetailView: UIView {
+class CityPopUpDetailView: UIView {
     override var intrinsicContentSize: CGSize {
         return CGSize(
             width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.height / 5
+            height: UIScreen.main.bounds.height / 4
         )
     }
     

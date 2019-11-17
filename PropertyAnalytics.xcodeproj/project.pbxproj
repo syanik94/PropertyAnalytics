@@ -33,7 +33,7 @@
 		3D168AA0237BA57700DB4652 /* DetailAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168A9F237BA57700DB4652 /* DetailAnnotationView.swift */; };
 		3D168AA3237CA51E00DB4652 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AA2237CA51E00DB4652 /* CityDetailViewController.swift */; };
 		3D168AA5237CB0E100DB4652 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AA4237CB0E100DB4652 /* CancelButton.swift */; };
-		3D168AA7237CCF2A00DB4652 /* CityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AA6237CCF2A00DB4652 /* CityDetailView.swift */; };
+		3D168AA7237CCF2A00DB4652 /* CityPopUpDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AA6237CCF2A00DB4652 /* CityPopUpDetailView.swift */; };
 		3D168AA9237CD44E00DB4652 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AA8237CD44E00DB4652 /* SaveButton.swift */; };
 		3D168AAB237CF7DB00DB4652 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AAA237CF7DB00DB4652 /* MapPin.swift */; };
 		3D168AAE237CF83000DB4652 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D168AAD237CF83000DB4652 /* FirestoreService.swift */; };
@@ -101,7 +101,7 @@
 		3D168A9F237BA57700DB4652 /* DetailAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnnotationView.swift; sourceTree = "<group>"; };
 		3D168AA2237CA51E00DB4652 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
 		3D168AA4237CB0E100DB4652 /* CancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
-		3D168AA6237CCF2A00DB4652 /* CityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailView.swift; sourceTree = "<group>"; };
+		3D168AA6237CCF2A00DB4652 /* CityPopUpDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPopUpDetailView.swift; sourceTree = "<group>"; };
 		3D168AA8237CD44E00DB4652 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		3D168AAA237CF7DB00DB4652 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		3D168AAD237CF83000DB4652 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
@@ -335,7 +335,7 @@
 				3D168A93237B4EB200DB4652 /* MapTableViewCell.swift */,
 				3D168A9A237B8A6C00DB4652 /* LoadingTableViewCell.swift */,
 				3D168A9F237BA57700DB4652 /* DetailAnnotationView.swift */,
-				3D168AA6237CCF2A00DB4652 /* CityDetailView.swift */,
+				3D168AA6237CCF2A00DB4652 /* CityPopUpDetailView.swift */,
 				3D168AAA237CF7DB00DB4652 /* MapPin.swift */,
 			);
 			path = Views;
@@ -663,7 +663,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D168AA7237CCF2A00DB4652 /* CityDetailView.swift in Sources */,
+				3D168AA7237CCF2A00DB4652 /* CityPopUpDetailView.swift in Sources */,
 				3D168AC8237E09BA00DB4652 /* StateTrendTableViewCell.swift in Sources */,
 				3D168AC6237E05F300DB4652 /* String+Extensions.swift in Sources */,
 				3D168AAE237CF83000DB4652 /* FirestoreService.swift in Sources */,

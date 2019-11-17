@@ -37,7 +37,13 @@ class SearchViewModel {
     
     var selectedCity: CityData?
     private var savedCities: [CityData] = []
-    private(set) var cityDataViewModel: [CityDataViewModel] = []
+    private(set) var cityDataViewModel: [CityDataViewModel] = [] {
+        didSet {
+            cityDataViewModel.forEach { (vm) in
+                print(vm)
+            }
+        }
+    }
     
     
     // MARK: - Initializer Methods
@@ -98,20 +104,27 @@ class SearchViewModel {
     }
     
     fileprivate func configureCityViewModel() {
-        cityDataViewModel = cityData.map({ (city) -> CityDataViewModel in
-            for savedCity in savedCities {
-              if savedCity.description == city.description {
-                return CityDataViewModel(cityData: city, isSaved: true)
+        print("Configured VM", #function)
+
+        if savedCities.isEmpty {
+            cityDataViewModel = cityData.map({ CityDataViewModel(cityData: $0, isSaved: false) })
+        }
+        if !savedCities.isEmpty {
+            cityDataViewModel = cityData.map({ (city) -> CityDataViewModel in
+                for savedCity in savedCities {
+                  if savedCity.description == city.description {
+                    return CityDataViewModel(cityData: city, isSaved: true)
+                    }
                 }
-            }
-            
-            for savedCity in savedCities {
-              if savedCity.description != city.description {
+                
+                for savedCity in savedCities {
+                  if savedCity.description != city.description {
+                    return CityDataViewModel(cityData: city, isSaved: false)
+                    }
+                }
                 return CityDataViewModel(cityData: city, isSaved: false)
-                }
-            }
-            return CityDataViewModel(cityData: city, isSaved: false)
-        })
+            })
+        }
     }
     
     fileprivate func setupDataDictionary() {

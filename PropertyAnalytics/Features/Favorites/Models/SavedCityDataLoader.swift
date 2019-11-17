@@ -24,7 +24,8 @@ class SavedCityDataLoader: DataLoader {
             if let document = snapshot {
                 let savedCityMap = document.data() as? [String: [String]]
                 let savedCities = savedCityMap?.values.flatMap({ $0 })
-                self?.getCityData(for: savedCities ?? [])
+                if savedCities!.isEmpty { self?.savedCityDataCompletion?([], nil) }
+                else { self?.getCityData(for: savedCities ?? []) }
             }
         }
     }

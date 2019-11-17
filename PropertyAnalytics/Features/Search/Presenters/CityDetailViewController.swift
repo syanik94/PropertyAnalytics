@@ -10,7 +10,8 @@ import UIKit
 
 struct CityDetailViewPresenter {
     var viewController: SearchViewController?
-    let cityDetailView = CityDetailView()
+    
+    let cityDetailView = CityPopUpDetailView()
     
     func remove() {
         cityDetailView.removeFromSuperview()
@@ -26,7 +27,10 @@ struct CityDetailViewPresenter {
         cityDetailView.cityDetailContentView.countyDescriptionLabel.text = cityDataViewModel.cityData.county +
                                                                             ", \(cityDataViewModel.cityData.state)"
         cityDetailView.cityDetailContentView.predictedPriceDescriptionLabel.text = "$\(cityDataViewModel.cityData.singleFamPredictedPricePerSqFt)"
+        
         cityDetailView.saveButton.isSelected = cityDataViewModel.isSaved
+        
+        cityDetailView.cityDetailContentView.currentPriceDescriptionLabel.text = "$\(cityDataViewModel.cityData.singleFamPricePerSqFt)"
         
         if let vc = viewController {
             vc.view.addSubview(cityDetailView)
@@ -34,7 +38,7 @@ struct CityDetailViewPresenter {
             cityDetailView.leadingAnchor.constraint(equalTo: vc.view.leadingAnchor).isActive = true
             cityDetailView.trailingAnchor.constraint(equalTo: vc.view.trailingAnchor).isActive = true
             cityDetailView.bottomAnchor.constraint(equalTo: vc.view.layoutMarginsGuide.bottomAnchor).isActive = true
-            cityDetailView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 5).isActive = true
+            cityDetailView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 4).isActive = true
         }
     }
 }
