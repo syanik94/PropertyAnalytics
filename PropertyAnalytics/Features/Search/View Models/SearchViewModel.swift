@@ -89,14 +89,14 @@ class SearchViewModel {
         }
     }
     
-    fileprivate func loadFavsData() {
-        favoritesDataLoader.load()
-    }
-    
     fileprivate func loadMapData() {
         mappingDataLoader.load()
     }
     
+    fileprivate func loadFavsData() {
+        favoritesDataLoader.load()
+    }
+
     fileprivate func configureCityViewModel() {
         if savedCities.isEmpty {
             cityDataViewModel = cityData.map({ CityDataViewModel(cityData: $0, isSaved: false) })

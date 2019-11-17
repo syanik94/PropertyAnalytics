@@ -16,6 +16,7 @@ class FavoriteTableViewCell: UITableViewCell {
                 cityDetailsContentView.cityDescriptionLabel.text = savedCity.description
                 cityDetailsContentView.countyDescriptionLabel.text = "\(savedCity.county), \(savedCity.state)"
                 cityDetailsContentView.predictedPriceDescriptionLabel.text = "$\(savedCity.singleFamPredictedPricePerSqFt)"
+                cityDetailsContentView.currentPriceDescriptionLabel.text = "$\(savedCity.singleFamPricePerSqFt)"
             }
         }
     }
